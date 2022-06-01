@@ -1,0 +1,398 @@
+[{
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_rewardStartPrize",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_ticketPriceStartLottery",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_lotteryStartDate",
+		"type": "uint256"
+	}, {
+		"internalType": "contract IERC721Enumerable",
+		"name": "_nftAddress",
+		"type": "address"
+	}, {
+		"internalType": "contract IERC20",
+		"name": "_mbtAddress",
+		"type": "address"
+	}, {
+		"internalType": "uint256",
+		"name": "_circleOfLottery",
+		"type": "uint256"
+	}],
+	"stateMutability": "nonpayable",
+	"type": "constructor"
+}, {
+	"anonymous": false,
+	"inputs": [{
+		"indexed": true,
+		"internalType": "address",
+		"name": "previousOwner",
+		"type": "address"
+	}, {
+		"indexed": true,
+		"internalType": "address",
+		"name": "newOwner",
+		"type": "address"
+	}],
+	"name": "OwnershipTransferred",
+	"type": "event"
+}, {
+	"anonymous": false,
+	"inputs": [{
+		"indexed": false,
+		"internalType": "address",
+		"name": "tokenRecovered",
+		"type": "address"
+	}, {
+		"indexed": false,
+		"internalType": "uint256",
+		"name": "amount",
+		"type": "uint256"
+	}],
+	"name": "adminTokenRecovery",
+	"type": "event"
+}, {
+	"anonymous": false,
+	"inputs": [{
+		"indexed": false,
+		"internalType": "uint256",
+		"name": "lotteryId",
+		"type": "uint256"
+	}, {
+		"indexed": false,
+		"internalType": "uint256",
+		"name": "_amount",
+		"type": "uint256"
+	}, {
+		"indexed": false,
+		"internalType": "uint256",
+		"name": "_fee",
+		"type": "uint256"
+	}],
+	"name": "claimReward",
+	"type": "event"
+}, {
+	"anonymous": false,
+	"inputs": [{
+		"indexed": false,
+		"internalType": "uint256",
+		"name": "_amount",
+		"type": "uint256"
+	}],
+	"name": "deposit",
+	"type": "event"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_lotteryId",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_reward",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_fee",
+		"type": "uint256"
+	}],
+	"name": "ClaimReward",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "address[]",
+		"name": "_playerlist",
+		"type": "address[]"
+	}],
+	"name": "CloseLottery",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_amount",
+		"type": "uint256"
+	}],
+	"name": "Deposit",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "GetOwnerAddress",
+	"outputs": [{
+		"internalType": "address",
+		"name": "",
+		"type": "address"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "Initialize",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "ReadAllLotteryInfo",
+	"outputs": [{
+		"components": [{
+			"internalType": "uint256",
+			"name": "_startDate",
+			"type": "uint256"
+		}, {
+			"internalType": "uint256",
+			"name": "_closeDate",
+			"type": "uint256"
+		}, {
+			"internalType": "uint256",
+			"name": "_ticketPrice",
+			"type": "uint256"
+		}, {
+			"internalType": "uint256",
+			"name": "_winNumber",
+			"type": "uint256"
+		}, {
+			"internalType": "address",
+			"name": "_winnerAddress",
+			"type": "address"
+		}, {
+			"internalType": "uint256",
+			"name": "_reward",
+			"type": "uint256"
+		}, {
+			"internalType": "address[]",
+			"name": "_playerList",
+			"type": "address[]"
+		}, {
+			"internalType": "bool",
+			"name": "_paid",
+			"type": "bool"
+		}, {
+			"internalType": "uint256",
+			"name": "_winnerReward",
+			"type": "uint256"
+		}, {
+			"internalType": "uint256",
+			"name": "_fee",
+			"type": "uint256"
+		}, {
+			"internalType": "uint256",
+			"name": "_remainPrice",
+			"type": "uint256"
+		}],
+		"internalType": "struct MBTLotteryPool.lotteryinfo[]",
+		"name": "",
+		"type": "tuple[]"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_rewardPrize",
+		"type": "uint256"
+	}],
+	"name": "adjustRewardPrize",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_ticketPrice",
+		"type": "uint256"
+	}],
+	"name": "adjustTicketPrice",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+	}],
+	"name": "allLotteryInfo",
+	"outputs": [{
+		"internalType": "uint256",
+		"name": "_startDate",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_closeDate",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_ticketPrice",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_winNumber",
+		"type": "uint256"
+	}, {
+		"internalType": "address",
+		"name": "_winnerAddress",
+		"type": "address"
+	}, {
+		"internalType": "uint256",
+		"name": "_reward",
+		"type": "uint256"
+	}, {
+		"internalType": "bool",
+		"name": "_paid",
+		"type": "bool"
+	}, {
+		"internalType": "uint256",
+		"name": "_winnerReward",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_fee",
+		"type": "uint256"
+	}, {
+		"internalType": "uint256",
+		"name": "_remainPrice",
+		"type": "uint256"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "circleOfLottery",
+	"outputs": [{
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "uint256",
+		"name": "_amount",
+		"type": "uint256"
+	}],
+	"name": "emergencyRewardWithdraw",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "initialized",
+	"outputs": [{
+		"internalType": "bool",
+		"name": "",
+		"type": "bool"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "lotteryStartDate",
+	"outputs": [{
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "mbtTokenAddress",
+	"outputs": [{
+		"internalType": "contract IERC20",
+		"name": "",
+		"type": "address"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "nftContractAddress",
+	"outputs": [{
+		"internalType": "contract IERC721Enumerable",
+		"name": "",
+		"type": "address"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "owner",
+	"outputs": [{
+		"internalType": "address",
+		"name": "",
+		"type": "address"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "ownerAddress",
+	"outputs": [{
+		"internalType": "address",
+		"name": "",
+		"type": "address"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "address",
+		"name": "_tokenAddress",
+		"type": "address"
+	}, {
+		"internalType": "uint256",
+		"name": "_tokenAmount",
+		"type": "uint256"
+	}],
+	"name": "recoverWrongTokens",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "renounceOwnership",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "rewardPrize",
+	"outputs": [{
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [],
+	"name": "ticketPrice",
+	"outputs": [{
+		"internalType": "uint256",
+		"name": "",
+		"type": "uint256"
+	}],
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"inputs": [{
+		"internalType": "address",
+		"name": "newOwner",
+		"type": "address"
+	}],
+	"name": "transferOwnership",
+	"outputs": [],
+	"stateMutability": "nonpayable",
+	"type": "function"
+}]
